@@ -1,26 +1,60 @@
 # Terraform Lab
 
-Learning Infrastructure as Code with Terraform and AWS.
+Infrastructure as Code (IaC) learning project using Terraform and AWS.
 
 ## Objectives
 
 - Learn Terraform fundamentals
 - Provision AWS infrastructure from code
-- Build reusable Terraform configurations
-- Understand state management
+- Understand Terraform state management
+- Build reusable and maintainable infrastructure
+
+## Current Progress
+
+- Terraform installed and configured
+- AWS CLI configured
+- AWS account connected
+- Initial Terraform configuration created
+- GitHub repository established
 
 ## Planned Resources
 
 - S3 Bucket
 - VPC
-- Subnet
+- Public Subnet
+- Internet Gateway
+- Route Table
 - Security Group
 - EC2 Instance
 
-## Commands
+## Terraform Workflow
 
+```bash
 terraform init
+terraform fmt
 terraform validate
 terraform plan
 terraform apply
 terraform destroy
+```
+
+## Repository Structure
+
+```text
+terraform-lab/
+├── README.md
+├── provider.tf
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+└── .gitignore
+```
+
+## Notes
+
+Currently investigating AWS account permissions affecting Terraform and AWS CLI resource creation.
+
+## Author
+
+Brandon Lambert
