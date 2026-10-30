@@ -17,3 +17,7 @@ output "environment" {
 output "vpc_cidr" {
   value = var.vpc_cidr
 }
+
+output "module_vpc_cidr" {
+  value = module.network.vpc_cidr
+}

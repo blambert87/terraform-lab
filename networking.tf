@@ -7,3 +7,9 @@
 #     Name = "${var.project_name}-vpc"
 #   }
 # }
+
+module "network" {
+  source = "./modules/network"
+
+  vpc_cidr = var.vpc_cidr
+}
