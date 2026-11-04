@@ -20,15 +20,27 @@ This repository documents my journey learning Terraform and AWS as part of my tr
 
 - Terraform installed and configured
 - AWS CLI configured
+- GitHub repository created
+- Terraform modules created
+- GitHub Actions workflow added
 - VPC deployed
 - Public subnet deployed
 - Internet Gateway deployed
 - Route table deployed
+- Route table association configured
 - Security Group configured
 - EC2 instance deployed
-- Nginx deployed
+- Nginx web server deployed
 - Public website accessible
-- GitHub Actions configured
+
+### Lessons Learned
+
+- Terraform variables
+- Terraform outputs
+- Terraform locals
+- Terraform modules
+- AWS networking fundamentals
+- Infrastructure as Code principles
 
 ## Deployed Infrastructure
 
@@ -102,10 +114,14 @@ terraform destroy
 ## Technologies
 
 - Terraform
-- AWS
+- AWS EC2
+- AWS VPC
+- AWS IAM
+- Linux
 - Git
 - GitHub
-- Linux
+- GitHub Actions
+- Nginx
 
 ## Results
 
@@ -117,7 +133,9 @@ Successfully provisioned AWS infrastructure using Terraform:
 - Route Table
 - Security Group
 - EC2 instance
-- Publicly accessible Nginx web server
+- Nginx Web Server
+
+The deployed EC2 instance serves a publicly accessible Nginx website.
 
 Website URL:
 
