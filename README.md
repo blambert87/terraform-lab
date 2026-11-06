@@ -44,6 +44,24 @@ This repository documents my journey learning Terraform and AWS as part of my tr
 
 ## Deployed Infrastructure
 
+## Application Deployment
+
+### Container Platform
+
+- Docker installed automatically using Terraform user_data
+- Custom Docker image created
+- Image pushed to GitHub Container Registry (GHCR)
+- EC2 instance pulls container image automatically
+- Container deployed automatically on instance creation
+
+### Registry
+
+- GitHub Container Registry (GHCR)
+
+Image:
+
+ghcr.io/blambert87/terraform-lab-web:latest
+
 ### Networking
 
 - VPC
@@ -81,7 +99,22 @@ Public Subnet
     │
 EC2 Instance
     │
-Nginx Web Server
+Nginx Web ServerGitHub
+    │
+    ▼
+GitHub Container Registry (GHCR)
+    │
+    ▼
+Terraform
+    │
+    ▼
+AWS EC2
+    │
+    ▼
+Docker
+    │
+    ▼
+Custom Website
 ```
 
 ## Project Structure
@@ -117,29 +150,43 @@ terraform destroy
 - AWS EC2
 - AWS VPC
 - AWS IAM
-- Linux
-- Git
-- GitHub
+- Amazon Linux 2023
+- Docker
+- GitHub Container Registry (GHCR)
 - GitHub Actions
-- Nginx
+- Git
+- Linux
 
 ## Results
 
-Successfully provisioned AWS infrastructure using Terraform:
+Successfully built and deployed:
 
-- VPC
-- Public subnet
+- AWS VPC
+- Public Subnet
 - Internet Gateway
 - Route Table
 - Security Group
+- EC2 Instance
+- Docker Runtime
+- Custom Docker Image
+- GitHub Container Registry Integration
+- Public Website
+
+The application is deployed using Infrastructure as Code and containerized workloads.
+
+## Milestones
+
+### v1.0
+
+- AWS networking infrastructure
 - EC2 instance
-- Nginx Web Server
+- Nginx web server
 
-The deployed EC2 instance serves a publicly accessible Nginx website.
+### v1.1
 
-Website URL:
-
-http://13.53.127.85
+- Custom Docker image
+- GitHub Container Registry
+- Automated container deployment on EC2
 
 ## Screenshots
 
