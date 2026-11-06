@@ -4,25 +4,25 @@ resource "aws_instance" "web" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.security_group_id]
 
-  user_data = <<-EOF
-  #!/bin/bash
-  dnf install -y nginx
-  systemctl enable nginx
-  systemctl start nginx
+user_data = <<-EOF
+#!/bin/bash
 
-  cat > /usr/share/nginx/html/index.html <<HTML
-  <!DOCTYPE html>
-  <html>
-  <head>
-   <title>Terraform Lab</title>
-  </head>
-  <body>
-   <h1>Terraform Lab</h1>
-   <p>Provisioned automatically with Terraform.</p>
-  </body>
-  </html>
-  HTML
-  EOF
+dnf update -y
+
+dnf install -y docker
+
+systemctl enable docker
+systemctl start docker
+
+sleep 30
+
+docker pull ghcr.io/blambert87/terraform-lab-web:latest
+
+docker run -d \
+  --name terraform-lab-web \
+  -p 80:80 \
+  ghcr.io/blambert87/terraform-lab-web:latest
+EOF
 
   associate_public_ip_address = true
   key_name                    = "terraform-lab-key"
