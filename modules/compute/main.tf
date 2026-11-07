@@ -31,3 +31,16 @@ EOF
     Name = "${var.project_name}-ec2"
   }
 }
+
+resource "aws_instance" "private" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  subnet_id = var.private_subnet_id
+
+  associate_public_ip_address = false
+
+  tags = {
+    Name = "${var.project_name}-private-ec2"
+  }
+}

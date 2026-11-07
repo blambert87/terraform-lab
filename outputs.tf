@@ -49,3 +49,15 @@ output "instance_id" {
 output "public_ip" {
   value = module.compute.public_ip
 }
+
+output "private_subnet_id" {
+  value = module.network.private_subnet_id
+}
+
+output "private_route_table_id" {
+  value = module.network.private_route_table_id
+}
+
+output "private_instance_id" {
+  value = module.compute.private_instance_id
+}

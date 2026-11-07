@@ -6,4 +6,5 @@ module "compute" {
   security_group_id = module.security.security_group_id
   project_name      = var.project_name
   ami_id            = var.ami_id
+  private_subnet_id = module.network.private_subnet_id
 }
