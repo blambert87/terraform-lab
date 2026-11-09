@@ -61,3 +61,12 @@ output "private_route_table_id" {
 output "private_instance_id" {
   value = module.compute.private_instance_id
 }
+
+output "private_subnet_b_id" {
+  value = module.network.private_subnet_b_id
+}
+
+output "postgres_endpoint" {
+  value     = aws_db_instance.postgres.endpoint
+  sensitive = true
+}

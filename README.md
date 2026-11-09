@@ -39,7 +39,13 @@ This repository documents my journey learning Terraform and AWS as part of my tr
 - Terraform outputs
 - Terraform locals
 - Terraform modules
+- Remote state management
 - AWS networking fundamentals
+- Security Groups
+- EC2 provisioning
+- Docker image creation
+- GitHub Container Registry (GHCR)
+- GitHub Actions CI/CD
 - Infrastructure as Code principles
 
 ## Deployed Infrastructure
@@ -144,6 +150,17 @@ terraform apply
 terraform destroy
 ```
 
+## Key Features
+
+- Infrastructure managed with Terraform
+- Automated AWS deployment
+- Custom Docker container
+- GitHub Container Registry integration
+- Automated container startup using EC2 user_data
+- Publicly accessible web application
+- Version controlled through GitHub
+- CI/CD workflow using GitHub Actions
+
 ## Technologies
 
 - Terraform
@@ -159,9 +176,11 @@ terraform destroy
 
 ## Results
 
-Successfully built and deployed:
+This project successfully demonstrates Infrastructure as Code using Terraform and AWS.
 
-- AWS VPC
+Provisioned resources include:
+
+- VPC
 - Public Subnet
 - Internet Gateway
 - Route Table
@@ -172,7 +191,7 @@ Successfully built and deployed:
 - GitHub Container Registry Integration
 - Public Website
 
-The application is deployed using Infrastructure as Code and containerized workloads.
+The infrastructure can be recreated consistently using Terraform configuration files and deployed automatically via GitHub Actions
 
 ## Milestones
 
@@ -188,15 +207,35 @@ The application is deployed using Infrastructure as Code and containerized workl
 - GitHub Container Registry
 - Automated container deployment on EC2
 
+### v1.2
+
+- S3 remote state backend
+- State file stored securely in AWS
+- Improved Terraform collaboration workflow
+
+### v1.3
+
+- DynamoDB state locking
+- Protected against concurrent Terraform operations
+
 ## Screenshots
 
-- AWS VPC
-- AWS Subnet
-- AWS Route Table
-- AWS Security Group
-- EC2 Instance
-- Nginx Homepage
+### AWS VPC Created with Terraform
+
+![AWS VPC](screenshots/vpc.png)
+
+### EC2 Instance Running
+
+![EC2 Instance](screenshots/ec2.png)
+
+### Web Application
+
+![Website](screenshots/website.png)
 
 ## Author
 
 Brandon Lambert
+
+IT Service Desk Analyst transitioning into DevOps and Cloud Engineering.
+
+GitHub: https://github.com/blambert87

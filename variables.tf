@@ -32,3 +32,9 @@ variable "ami_id" {
   description = "Amazon Linux 2023 AMI"
   type        = string
 }
+
+variable "db_password" {
+  description = "PostgreSQL password"
+  type        = string
+  sensitive   = true
+}
