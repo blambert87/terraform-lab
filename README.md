@@ -221,6 +221,14 @@ The infrastructure can be recreated consistently using Terraform configuration f
 - Protected Terraform state against concurrent modifications
 - Improved team collaboration capabilities
 
+### v2.1
+
+- Implemented Terraform input variables
+- Added configurable environment values
+- Parameterised AWS region, VPC CIDR and instance type
+- Introduced sensitive variables for secrets management
+- Improved configuration flexibility and reusability
+
 ## Screenshots
 
 ### AWS VPC Created with Terraform
