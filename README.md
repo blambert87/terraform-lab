@@ -216,8 +216,10 @@ The infrastructure can be recreated consistently using Terraform configuration f
 
 ### v1.3
 
-- DynamoDB state locking
-- Protected against concurrent Terraform operations
+- Implemented S3 remote state backend
+- Implemented DynamoDB state locking
+- Protected Terraform state against concurrent modifications
+- Improved team collaboration capabilities
 
 ## Screenshots
 

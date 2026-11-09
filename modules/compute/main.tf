@@ -25,7 +25,7 @@ docker run -d \
 EOF
 
   associate_public_ip_address = true
-  key_name                    = "terraform-lab-key"
+  key_name                    = "terraform-lab-key-v2"
 
   tags = {
     Name = "${var.project_name}-ec2"
