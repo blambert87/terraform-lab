@@ -6,3 +6,9 @@ crash.log
 
 # Variables containing secrets
 *.tfvars
+
+# SSH Keys
+*.pem
+
+# Logs
+*.log
