@@ -52,6 +52,8 @@ This repository documents my journey learning Terraform and AWS as part of my tr
 
 ## Application Deployment
 
+The application is containerized using Docker and stored in GitHub Container Registry (GHCR). The EC2 instance automatically installs Docker, pulls the latest image, and deploys the container during provisioning.
+
 ### Container Platform
 
 - Docker installed automatically using Terraform user_data
@@ -64,17 +66,16 @@ This repository documents my journey learning Terraform and AWS as part of my tr
 
 - GitHub Container Registry (GHCR)
 
-Image:
-
-ghcr.io/blambert87/terraform-lab-web:latest
+Image: `ghcr.io/blambert87/terraform-lab-web:latest`
 
 ### Networking
 
-- VPC
-- Public Subnet
+- Custom VPC (10.0.0.0/16)
+- Public subnet
 - Internet Gateway
 - Route Table
-- Route Table Association
+- Security Group
+- Public EC2 instance
 
 ### Security
 
