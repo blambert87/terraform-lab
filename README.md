@@ -221,6 +221,13 @@ The infrastructure can be recreated consistently using Terraform configuration f
 - Protected Terraform state against concurrent modifications
 - Improved team collaboration capabilities
 
+### v2.0
+
+- Refactored infrastructure into reusable Terraform modules
+- Created dedicated network, security and compute modules
+- Implemented module variables and outputs
+- Improved infrastructure maintainability
+
 ### v2.1
 
 - Implemented Terraform input variables
