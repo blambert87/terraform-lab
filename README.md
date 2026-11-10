@@ -229,6 +229,13 @@ The infrastructure can be recreated consistently using Terraform configuration f
 - Introduced sensitive variables for secrets management
 - Improved configuration flexibility and reusability
 
+### v2.2
+
+- Created environment-specific variable files
+- Added development and production configurations
+- Improved deployment flexibility
+- Separated configuration from infrastructure code
+
 ## Screenshots
 
 ### AWS VPC Created with Terraform
