@@ -27,7 +27,7 @@ output "vpc_id" {
 }
 
 output "subnet_id" {
-  value = module.network.subnet_id
+  value = module.network.public_subnet_id
 }
 
 output "internet_gateway_id" {
@@ -69,4 +69,8 @@ output "private_subnet_b_id" {
 output "postgres_endpoint" {
   value     = aws_db_instance.postgres.endpoint
   sensitive = true
+}
+
+output "alb_dns_name" {
+  value = module.load_balancer.alb_dns_name
 }

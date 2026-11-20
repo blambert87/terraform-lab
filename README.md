@@ -90,7 +90,7 @@ Image: `ghcr.io/blambert87/terraform-lab-web:latest`
 - S3 Bucket
 
 ### Application
-
+http://terraform-lab-alb-722751542.eu-north-1.elb.amazonaws.com
 - Nginx Web Server
 
 ## Architecture
@@ -243,6 +243,15 @@ The infrastructure can be recreated consistently using Terraform configuration f
 - Improved deployment flexibility
 - Separated configuration from infrastructure code
 
+### v3.0
+
+- Implemented AWS Application Load Balancer (ALB)
+- Created Target Groups and Health Checks
+- Added HTTP Listener
+- Routed web traffic through ALB
+- Implemented multi-AZ architecture
+- Improved scalability and availabilit
+
 ## Screenshots
 
 ### AWS VPC Created with Terraform
@@ -256,6 +265,30 @@ The infrastructure can be recreated consistently using Terraform configuration f
 ### Web Application
 
 ![Website](screenshots/website.png)
+
+## Application Load Balancer
+
+The application is fronted by an AWS Application Load Balancer (ALB) which distributes traffic to registered targets through a Target Group and health checks.
+
+### ALB Overview
+
+![ALB Overview](screenshots/alb-overview.png)
+
+### Listener Configuration
+
+![ALB Listener](screenshots/alb-listener.png)
+
+### Target Group Health
+
+![Target Group](screenshots/alb-target-group.png)
+
+### Application Accessed Through ALB
+
+![Website Through ALB](screenshots/alb-website.png)
+
+## Results
+
+This project successfully demonstrates Infrastructure as Code using Terraform and AWS.
 
 ## Author
 

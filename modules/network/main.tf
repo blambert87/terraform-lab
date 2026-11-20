@@ -7,12 +7,24 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "public" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.1.0/24"
-  availability_zone = "eu-north-1a"
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.1.0/24"
+  availability_zone       = "eu-north-1a"
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "${var.project_name}-public-subnet"
+  }
+}
+
+resource "aws_subnet" "public_b" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.4.0/24"
+  availability_zone       = "eu-north-1b"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "${var.project_name}-public-subnet-b"
   }
 }
 
@@ -77,5 +89,10 @@ resource "aws_route_table_association" "private" {
 
 resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.public.id
+  route_table_id = aws_route_table.public.id
+}
+
+resource "aws_route_table_association" "public_b" {
+  subnet_id      = aws_subnet.public_b.id
   route_table_id = aws_route_table.public.id
 }

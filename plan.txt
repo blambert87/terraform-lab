@@ -1,0 +1,104 @@
+
+Warning: Deprecated Parameter
+
+The parameter "dynamodb_table" is deprecated. Use parameter "use_lockfile" instead.
+Acquiring state lock. This may take a few moments...
+data.aws_caller_identity.current: Reading...
+module.network.aws_vpc.main: Refreshing state... [id=vpc-04002561b86e509fd]
+data.aws_caller_identity.current: Read complete after 0s [id=426143721089]
+module.network.aws_subnet.private_b: Refreshing state... [id=subnet-090ffba6ac8403091]
+module.load_balancer.aws_lb_target_group.web: Refreshing state... [id=arn:aws:elasticloadbalancing:eu-north-1:426143721089:targetgroup/terraform-lab-tg/ec7473e1e2b3b9e2]
+module.security.aws_security_group.web: Refreshing state... [id=sg-00eac25d2f064af8a]
+module.network.aws_internet_gateway.main: Refreshing state... [id=igw-01ed9cc2cba594403]
+module.network.aws_subnet.public: Refreshing state... [id=subnet-01ed8596ba55ac882]
+module.network.aws_route_table.private: Refreshing state... [id=rtb-0eca1a53da1df12d9]
+module.network.aws_subnet.public_b: Refreshing state... [id=subnet-0766a7a6eb2dd6b14]
+module.security.aws_security_group.alb: Refreshing state... [id=sg-0df0a42f6ef7d25a1]
+module.network.aws_subnet.private: Refreshing state... [id=subnet-045f5dfeebd210b64]
+module.network.aws_route_table.public: Refreshing state... [id=rtb-06fe10cf807e7cd25]
+module.network.aws_route_table_association.private_b: Refreshing state... [id=rtbassoc-05b774676326dd3a1]
+module.security.aws_security_group.private_ec2: Refreshing state... [id=sg-0c18ab0f5c1e93665]
+aws_security_group.postgres: Refreshing state... [id=sg-00a05ccc9f6de1791]
+module.network.aws_route_table_association.private: Refreshing state... [id=rtbassoc-0b50fc46a57a8204f]
+aws_db_subnet_group.postgres: Refreshing state... [id=terraform-lab-db-subnet-group]
+module.compute.aws_instance.private: Refreshing state... [id=i-0e6d502437cbd604e]
+module.load_balancer.aws_lb.web: Refreshing state... [id=arn:aws:elasticloadbalancing:eu-north-1:426143721089:loadbalancer/app/terraform-lab-alb/94e57e48b7d04e55]
+module.compute.aws_instance.web: Refreshing state... [id=i-0d971f82b1c30bfa6]
+module.network.aws_route_table_association.public: Refreshing state... [id=rtbassoc-068b4a1b3460a596b]
+module.network.aws_route_table_association.public_b: Refreshing state... [id=rtbassoc-0c8cbada45a88d827]
+aws_db_instance.postgres: Refreshing state... [id=db-TYWH2VIOOB3HYYLFZEPXC6THPU]
+module.load_balancer.aws_lb_listener.http: Refreshing state... [id=arn:aws:elasticloadbalancing:eu-north-1:426143721089:listener/app/terraform-lab-alb/94e57e48b7d04e55/8a74bbf0cd020742]
+module.load_balancer.aws_lb_target_group_attachment.web: Refreshing state... [id=arn:aws:elasticloadbalancing:eu-north-1:426143721089:targetgroup/terraform-lab-tg/ec7473e1e2b3b9e2,i-0d971f82b1c30bfa6,80]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # module.load_balancer.aws_lb.web will be updated in-place
+  ~ resource "aws_lb" "web" {
+        id                                                           = "arn:aws:elasticloadbalancing:eu-north-1:426143721089:loadbalancer/app/terraform-lab-alb/94e57e48b7d04e55"
+        name                                                         = "terraform-lab-alb"
+      ~ security_groups                                              = [
+          - "sg-0df0a42f6ef7d25a1",
+        ] -> (known after apply)
+        tags                                                         = {}
+        # (28 unchanged attributes hidden)
+
+        # (5 unchanged blocks hidden)
+    }
+
+  # module.security.aws_security_group.alb must be replaced
+-/+ resource "aws_security_group" "alb" {
+      ~ arn                    = "arn:aws:ec2:eu-north-1:426143721089:security-group/sg-0df0a42f6ef7d25a1" -> (known after apply)
+      ~ description            = "ALB Security Group" -> "Allow HTTP traffic to ALB" # forces replacement
+      ~ id                     = "sg-0df0a42f6ef7d25a1" -> (known after apply)
+      ~ ingress                = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - from_port        = 80
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "tcp"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 80
+                # (1 unchanged attribute hidden)
+            },
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = "HTTP"
+              + from_port        = 80
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 80
+            },
+        ]
+        name                   = "terraform-lab-alb-sg"
+      + name_prefix            = (known after apply)
+      ~ owner_id               = "426143721089" -> (known after apply)
+      + revoke_rules_on_delete = false
+      ~ tags                   = {
+          + "Name" = "terraform-lab-alb-sg"
+        }
+      ~ tags_all               = {
+          + "Name" = "terraform-lab-alb-sg"
+        }
+        # (3 unchanged attributes hidden)
+    }
+
+Plan: 1 to add, 1 to change, 1 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

@@ -6,7 +6,7 @@ output "vpc_cidr" {
   value = aws_vpc.main.cidr_block
 }
 
-output "subnet_id" {
+output "public_subnet_id" {
   value = aws_subnet.public.id
 }
 
@@ -28,4 +28,8 @@ output "private_route_table_id" {
 
 output "private_subnet_b_id" {
   value = aws_subnet.private_b.id
+}
+
+output "public_subnet_b_id" {
+  value = aws_subnet.public_b.id
 }

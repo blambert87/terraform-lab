@@ -1,5 +1,5 @@
 variable "vpc_cidr" {
-  type        = string
+  type = string
 }
 
 variable "project_name" {
