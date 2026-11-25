@@ -252,6 +252,14 @@ The infrastructure can be recreated consistently using Terraform configuration f
 - Implemented multi-AZ architecture
 - Improved scalability and availabilit
 
+### v3.1
+
+- Implemented AWS Auto Scaling Group (ASG)
+- Created Launch Template for automated EC2 provisioning
+- Integrated ASG with Application Load Balancer Target Group
+- Implemented high availability across multiple Availability Zones
+- Enabled automatic instance replacement and scaling
+
 ## Screenshots
 
 ### AWS VPC Created with Terraform
