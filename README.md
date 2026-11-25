@@ -320,9 +320,9 @@ All instances successfully passed Application Load Balancer health checks.
 
 ## Self-Healing Demonstration
 
-To test fault tolerance, an Auto Scaling Group instance was manually terminated.
+To validate the Auto Scaling Group, an EC2 instance was manually terminated.
 
-The Auto Scaling Group detected the loss of capacity and automatically launched a replacement instance.
+The Auto Scaling Group detected the reduction in capacity and automatically launched a replacement instance. The new instance successfully registered with the Target Group and passed Application Load Balancer health checks, restoring the environment to its desired state.
 
 ![ASG Self Healing](screenshots/asg-self-healing.png)
 
