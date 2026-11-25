@@ -294,6 +294,38 @@ The application is fronted by an AWS Application Load Balancer (ALB) which distr
 
 ![Website Through ALB](screenshots/alb-website.png)
 
+## Auto Scaling Group
+
+The Auto Scaling Group maintains a desired capacity of 2 EC2 instances across multiple Availability Zones.
+
+![ASG Overview](screenshots/asg-overview.png)
+
+---
+
+## Running Instances
+
+The Auto Scaling Group successfully launched EC2 instances and distributed them across Availability Zones.
+
+![Running Instances](screenshots/instances.png)
+
+---
+
+## Target Group Health
+
+All instances successfully passed Application Load Balancer health checks.
+
+![Target Group Health](screenshots/target-group-healthy.png)
+
+---
+
+## Self-Healing Demonstration
+
+To test fault tolerance, an Auto Scaling Group instance was manually terminated.
+
+The Auto Scaling Group detected the loss of capacity and automatically launched a replacement instance.
+
+![ASG Self Healing](screenshots/asg-self-healing.png)
+
 ## Results
 
 This project successfully demonstrates Infrastructure as Code using Terraform and AWS.
